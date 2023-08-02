@@ -1,46 +1,60 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kadai_015</title>
+</head>
 <body>
     <p>
     <?php
-class Food {
-    private $name,
-            $price;
 
-            public function construct($name,$price) {
-                $this->name=$name;
-                $this->price=$price;
-           }
-        
-           public function show_price(){
-            return $this->price;
-        }
+ class Food {
 
-}
+    private $name;
+    private $price;
+  
+    public function __construct(string $name, int $price) {
+      $this->name = $name;
+      $this->price = $price;
+    }
+    
+    public function show_price () {
+      echo $this->price . '<br/>';
+    }
+  }
 
-?>
-<?php
-class Animal {
-    private $name,
-            $height,
-            $weight;
+  $food = new Food('potato', 250);
 
-            public function __construct($name,$height,$weight){
-                $this->name=$name;
-                $this->height=$height;
-                $this->weight=$weight;
-            }
-            public function show_height(){
-                 return $this->height;
-            }
-}
+  print_r($food);
+  echo '<br/>';
 
-public function __construct($name,$height,$weight){
-    $this->name=$name;
-    $this->height=$height;
-    $this->weight=$weight;
-}
-public function show_height(){
-     return $this->height;
-}
+
+  class Animal {
+
+    private $name;
+    private $height;
+    private $weight;
+
+    public function __construct(string $name, int $height, int $weight) {
+      $this->name = $name;
+      $this->height = $height;
+      $this->weight = $weight;
+    }
+    
+    public function show_height () {
+      echo $this->height . '<br/>';
+    }
+  }
+
+    $animal = new Animal('dog', 60, 5000);
+
+    print_r($animal);
+    echo'<br/>';
+
+    $food->show_price();
+    $animal->show_height();
+
 
 ?>
     </p>
